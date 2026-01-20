@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ichchha 🎉</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+    height:100vh;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transform:scale(1.05);
+    transition:.9s ease;
+}
+
+.slide.active{
+    opacity:1;
+    transform:scale(1);
+    z-index:2;
+}
+
+.card{
+    width:92%;
+    max-width:1000px;
+    height:88%;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(20px);
+    border-radius:32px;
+    padding:40px;
+    display:flex;
+    gap:35px;
+    box-shadow:0 40px 90px rgba(0,0,0,.3);
+    color:#fff;
+}
+
+/* IMAGE */
+.photo{
+    flex:1;
+    border-radius:26px;
+    overflow:hidden;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+}
+
+/* TEXT */
+.content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+h1{
+    font-size:3rem;
+    line-height:1.15;
+}
+
+p{
+    margin-top:18px;
+    font-size:1.25rem;
+    line-height:1.7;
+}
+
+button{
+    margin-top:28px;
+    padding:14px 36px;
+    border:none;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    background:#fff;
+    color:#ff5f8f;
+    transition:.3s;
+    align-self:flex-start;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#ff5f8f;
+    color:#fff;
+}
+
+/* DECOR */
+.decor{
+    position:absolute;
+    font-size:4rem;
+    animation:float 6s infinite ease-in-out;
+}
+
+.cake{bottom:30px;left:40px}
+.balloon{top:30px;right:40px}
+.sparkle{top:120px;left:60px}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-30px)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="decor cake">🎂</div>
+<div class="decor balloon">🎈</div>
+<div class="decor sparkle">✨</div>
+
+<!-- SLIDE 1 -->
+<section class="slide active">
+<div class="card">
+<div class="photo"><img src="2.jpg"></div>
+<div class="content">
+<h1>Happy Birthday<br>Ichchha 💖</h1>
+<p>
+Happy Birthday ichchha! Wishing you a day filled with smiles, peace, and all the good things you deserve. Even though we don’t talk much these days,
+I truly hope your year ahead is bright and kind to you. Take care and enjoy your special day. 
+</p>
+<button onclick="next()">Start ➜</button>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 2 -->
+<section class="slide">
+<div class="card">
+<div class="content">
+<h1>You Mean A Lot 🌸</h1>
+<p>
+Ichchha, I know we don’t talk much nowadays, but I just wanted you to know that you still mean a lot in my life. I truly value the friendship we share.
+</p>
+<button onclick="next()">Next ➜</button>
+</div>
+<div class="photo"><img src="3.jpeg"></div>
+</div>
+</section>
+
+<!-- SLIDE 3 -->
+<section class="slide">
+<div class="card">
+<div class="photo"><img src="4.jpg"></div>
+<div class="content">
+<h1>From My Heart 🤍</h1>
+<p>
+I really care about you.  
+I miss you in every moment. I genuinely care about you more than words can explain. You have always been a very special part of my life.
+</p>
+<button onclick="next()">Next ➜</button>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 4 -->
+<section class="slide">
+<div class="card">
+<div class="content">
+<h1>Wishing You ✨</h1>
+<p>
+May your life be filled with success,  
+good health, calm moments, and happiness.  
+May every step you take bring you closer to your dreams.
+</p>
+<button onclick="next()">Next ➜</button>
+</div>
+<div class="photo"><img src="5.jpg"></div>
+</div>
+</section>
+
+<!-- SLIDE 5 -->
+<section class="slide">
+<div class="card">
+<div class="photo"><img src="6.jpg"></div>
+<div class="content">
+<h1>Once Again 🎉</h1>
+<p>
+Happy Birthday once again Ichchha. I just want you to know that you mean a lot to me. I truly care about you, respect you deeply, and I do miss you.
+Our friendship and the memories we shared mean so much to me—especially the old days and the times you helped me when I needed it.
+I respect your decision and always will. I genuinely wish you happiness, peace, and a beautiful lifeahead
+</p>
+<button onclick="next()">Restart 🔁</button>
+</div>
+</div>
+</section>
+
+<script>
+let slides=document.querySelectorAll('.slide');
+let i=0;
+function next(){
+slides[i].classList.remove('active');
+i=(i+1)%slides.length;
+slides[i].classList.add('active');
+}
+</script>
+
+</body>
+</html>
